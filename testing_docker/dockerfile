@@ -1,0 +1,17 @@
+# Building Image
+
+# Base Image that sets up Node version and Linux OS
+FROM node:20-alpine
+
+# Include Dependencies
+COPY ./package.json .
+COPY ./package-lock.json .
+
+# Install dependencies in the Image
+RUN npm install
+
+# Copy the codebase
+COPY ./server.js .
+
+# CMD to run the image
+CMD ["node", "server.js"]
