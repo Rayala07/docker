@@ -32,6 +32,14 @@ app.get("/api/users", (req, res) => {
             {
                 name: "Charlie",
                 email: "charlie@work.com"
+            },
+            {
+                name: "Nunu",
+                email: "nunu@work.com"
+            },
+            {
+                name: "Jhontu",
+                email: "jhontu@work.com"
             }
         ]
     })
