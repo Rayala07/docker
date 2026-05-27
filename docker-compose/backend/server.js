@@ -4,6 +4,7 @@ import morgan from "morgan"
 const app = express();
 
 app.use(morgan())
+app.use(express.static('public'))
 
 app.listen(3000, () => {
     console.log("Server is running at port 3000");
@@ -43,4 +44,8 @@ app.get("/api/users", (req, res) => {
             }
         ]
     })
+})
+
+app.get("*name", (req, res) => {
+    res.sendFile("public/index.html", { root: __dirname })
 })
